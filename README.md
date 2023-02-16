@@ -2,12 +2,7 @@
 
 <img width="75px" src="https://github.com/Pedro-Murilo/icons-for-readme/blob/main/.github/vscode-icon.svg" alt="VSCode Icon" />
 
-:memo: :memo: - for documentation changes
-:art: :art: - for changes to the UI or styling
-:bug: :bug: - for a bug fix
-:sparkles: :sparkles: - for a new feature
-:recycle: :recycle: - for refactoring or code cleanup
-:fire: :fire: - for removing code or files
+:memo: :memo: 
 
 Welcome to the Biochemical Laboratory Web Application! This application is designed to help biochemical laboratories manage their daily operations and streamline their processes. With its user-friendly interface and powerful features, you can easily track your sample results, manage your inventory, and run reports with ease.
 
