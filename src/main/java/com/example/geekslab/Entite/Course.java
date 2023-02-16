@@ -1,6 +1,22 @@
 package com.example.geekslab.Entite;
 
-import java.io.Serializable;
+import javax.persistence.*;
 
-public class Course implements Serializable {
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+@Entity
+public class Course {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private String description;
 }
