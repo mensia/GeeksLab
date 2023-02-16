@@ -1,6 +1,6 @@
 # Biochemical Laboratory Web Application
 
-<img width="75px" src="https://github.com/Pedro-Murilo/icons-for-readme/blob/main/.github/vscode-icon.svg" alt="VSCode Icon" /> <img width="75px" src="https://th.bing.com/th/id/OIP.CIHazLUXhBCxiho2mE2glQHaGp?pid=ImgDet&rs=1" alt="VSCode Icon" />
+<img width="75px" src="https://github.com/Pedro-Murilo/icons-for-readme/blob/main/.github/vscode-icon.svg" alt="VSCode Icon" /> <img width="75px" src="https://th.bing.com/th/id/OIP.CIHazLUXhBCxiho2mE2glQHaGp?pid=ImgDet&rs=1" alt="VSCode Icon" /> <img width="75px" src="https://i.pinimg.com/originals/e6/f3/20/e6f3204bd34862cd764314637857e193.png" alt="VSCode Icon" /> <img width="75px" src="https://dwzv43nquktcm.cloudfront.net/wp-content/uploads/2018/03/image_news_get-1.jpg" alt="VSCode Icon" />
 
 
 
