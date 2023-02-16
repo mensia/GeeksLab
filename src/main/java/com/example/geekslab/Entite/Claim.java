@@ -29,7 +29,8 @@ public class Claim implements Serializable {
     private Date Date;
     private String Status;
 
- 
 
+    @ManyToOne
+    Useer user;
 
 }
