@@ -1,0 +1,29 @@
+package com.example.geekslab.Controller;
+
+import com.example.geekslab.Entite.Claim;
+import com.example.geekslab.IService.IClaimService;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
+import java.util.List;
+
+@RestController
+
+public class ClaimController {
+    IClaimService serv;
+
+    @PostMapping("/utilisateurs/{userId}/reclamations")
+    public ResponseEntity<Claim> ajouterReclamation(@PathVariable Long userId,
+                                                    @RequestParam @DateTimeFormat(pattern="yyyy-MM-dd") Date date,
+                                                    @RequestParam String description) {
+        Claim reclamation = serv.ajouterReclamation(userId, date, description);
+        return ResponseEntity.ok(reclamation);
+    }
+
+    @GetMapping("/list-claims/")
+    @ResponseBody
+    public List<Claim> GetallClaims(){
+        return  serv.GetallClaims();
+}
