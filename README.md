@@ -1,7 +1,7 @@
 # Biochemical Laboratory Web Application
 
-<img width="75px" src="https://github.com/Pedro-Murilo/icons-for-readme/blob/main/.github/vscode-icon.svg" alt="VSCode Icon" />
-<img width="75px" src="https://th.bing.com/th/id/OIP.CIHazLUXhBCxiho2mE2glQHaGp?pid=ImgDet&rs=1" alt="VSCode Icon" />
+<img width="75px" src="https://github.com/Pedro-Murilo/icons-for-readme/blob/main/.github/vscode-icon.svg" alt="VSCode Icon" /> <img width="75px" src="https://th.bing.com/th/id/OIP.CIHazLUXhBCxiho2mE2glQHaGp?pid=ImgDet&rs=1" alt="VSCode Icon" />
+
 
 
 
