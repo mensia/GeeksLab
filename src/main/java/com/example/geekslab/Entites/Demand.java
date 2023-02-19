@@ -1,4 +1,4 @@
-package com.example.geekslab.Entite;
+package com.example.geekslab.Entites;
 
 import lombok.*;
 
@@ -14,11 +14,9 @@ import java.io.Serializable;
 @ToString
 @Entity
 
-public class Call implements Serializable {
-    // chaque fournisseur propose une offre a la demande du ChefService
-    // le hcef accepte l offre 'call' qui lui plait
-    // une notification est envoyer au fournissur
+public class Demand implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    // le chefService fait une demande pour les equipement
 }

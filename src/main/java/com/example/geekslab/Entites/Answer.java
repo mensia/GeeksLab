@@ -1,12 +1,10 @@
-package com.example.geekslab.Entite;
+package com.example.geekslab.Entites;
 
-import java.io.Serializable;/* */
-
+import com.example.geekslab.Entites.Question;
 import lombok.*;
-import lombok.experimental.FieldDefaults;
+
 import javax.persistence.*;
-import java.io.Serializable;
-import java.util.List;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter

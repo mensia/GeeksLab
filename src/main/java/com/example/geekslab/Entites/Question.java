@@ -1,14 +1,10 @@
-package com.example.geekslab.Entite;
-
-import java.io.Serializable;
+package com.example.geekslab.Entites;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
-import lombok.experimental.FieldDefaults;
+
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor

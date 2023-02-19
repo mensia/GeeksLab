@@ -1,4 +1,4 @@
-package com.example.geekslab.Entite;
+package com.example.geekslab.Entites;
 
 import lombok.*;
 
@@ -14,7 +14,7 @@ import java.io.Serializable;
 @ToString
 @Entity
 
-public class Material implements Serializable {
+public class Bilan implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
