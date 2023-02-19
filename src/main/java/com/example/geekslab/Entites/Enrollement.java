@@ -1,33 +1,27 @@
-package com.example.geekslab.Entite;
-
-import java.io.Serializable;
+package com.example.geekslab.Entites;
 
 import lombok.*;
-import lombok.experimental.FieldDefaults;
+
 import javax.persistence.*;
+
+import javax.persistence.Entity;
 import java.io.Serializable;
-import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @ToString
 @Entity
-
-
-public class Lesson implements Serializable {
+public class Enrollement implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
-    private String description;
-    private String videoUrl;
+   /* @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user; */
 
     @ManyToOne
     @JoinColumn(name = "course_id")
     private Course course;
-
-    // Getters and setters for each property
 }
-

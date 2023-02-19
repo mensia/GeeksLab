@@ -1,4 +1,4 @@
-package com.example.geekslab.Entite;
+package com.example.geekslab.Entites;
 
 public enum Specialite {
     MEDCINE , PARAMEDICAL
