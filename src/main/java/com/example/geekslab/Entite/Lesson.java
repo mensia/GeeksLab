@@ -1,13 +1,12 @@
 package com.example.geekslab.Entite;
 
-import lombok.*;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.io.Serializable;
 
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -15,8 +14,20 @@ import java.io.Serializable;
 @ToString
 @Entity
 
+
 public class Lesson implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
+
+    private String name;
+    private String description;
+    private String videoUrl;
+
+    @ManyToOne
+    @JoinColumn(name = "course_id")
+    private Course course;
+
+    // Getters and setters for each property
 }
+
