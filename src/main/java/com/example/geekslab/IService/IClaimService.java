@@ -12,6 +12,6 @@ public interface IClaimService {
 
     void delete(long id);
 
-    public Claim ajouterReclamation(Long userId, Date date, String description) ;
+    //public Claim ajouterReclamation(Long userId, Date date, String description) ;
 
     }

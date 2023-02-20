@@ -14,16 +14,21 @@ import java.util.List;
 public class ClaimController {
     IClaimService serv;
 
-    @PostMapping("/utilisateurs/{userId}/reclamations")
+    /*@PostMapping("/utilisateurs/{userId}/reclamations")
     public ResponseEntity<Claim> ajouterReclamation(@PathVariable Long userId,
                                                     @RequestParam @DateTimeFormat(pattern="yyyy-MM-dd") Date date,
                                                     @RequestParam String description) {
         Claim reclamation = serv.ajouterReclamation(userId, date, description);
         return ResponseEntity.ok(reclamation);
     }
+*/
 
-    @GetMapping("/list-claims/")
-    @ResponseBody
-    public List<Claim> GetallClaims(){
-        return  serv.GetallClaims();
+    @PostMapping("/add-claim")
+    public void ajouterReclamation(@RequestBody Claim reclamation) {
+        serv.AddClaim(reclamation);
+    }
+    @GetMapping("/list-claims")
+    public List<Claim> GetallClaims() {
+        return serv.GetallClaims();
+    }
 }

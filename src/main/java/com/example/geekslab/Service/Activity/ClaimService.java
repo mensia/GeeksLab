@@ -29,7 +29,7 @@ public class ClaimService implements IClaimService {
     repo.deleteById(id);
     }
 
-    @Override
+    /*@Override
     public Claim ajouterReclamation(Long userId, Date date, String description) {
         Useer user = UseerRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("Utilisateur introuvable"));
@@ -38,7 +38,7 @@ public class ClaimService implements IClaimService {
         reclamation.setDate(date);
         reclamation.setDescription(description);
         return repo.save(reclamation);    }
-
+*/
     public List<Claim> getReclamationsByUserId(Long userId) {
         return repo.findByUtilisateurId(userId);
     }
