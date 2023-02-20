@@ -1,4 +1,4 @@
-package com.example.geekslab.Entite;
+package com.example.geekslab.Entites;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
