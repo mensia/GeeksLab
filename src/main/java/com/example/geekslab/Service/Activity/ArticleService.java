@@ -4,8 +4,12 @@ import com.example.geekslab.Entite.Article;
 import com.example.geekslab.Entite.Claim;
 import com.example.geekslab.IService.IArticleService;
 import com.example.geekslab.Repository.ActivityRepo.ArticleRepo;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+@Service
+@AllArgsConstructor
 
 public class ArticleService implements IArticleService {
 
