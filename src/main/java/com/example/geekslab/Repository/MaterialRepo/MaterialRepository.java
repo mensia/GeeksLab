@@ -1,4 +1,6 @@
 package com.example.geekslab.Repository.MaterialRepo;
 
-public class MaterialRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public class MaterialRepository   {
 }

@@ -11,7 +11,9 @@ public interface IClaimService {
     public Claim AddClaim(Claim claim);
 
     void delete(long id);
+    public Claim findClaimById(Long id)  ;
 
-    //public Claim ajouterReclamation(Long userId, Date date, String description) ;
+
+        //public Claim ajouterReclamation(Long userId, Date date, String description) ;
 
     }

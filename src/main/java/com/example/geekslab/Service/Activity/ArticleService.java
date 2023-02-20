@@ -28,4 +28,9 @@ public class ArticleService implements IArticleService {
     public void delete(long id) {
 
     }
+
+    @Override
+    public Article findArticlebyId(Long id) {
+        return rep.findById(id).orElse(null);
+    }
 }

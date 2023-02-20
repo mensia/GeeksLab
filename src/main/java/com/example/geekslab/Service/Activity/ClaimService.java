@@ -4,11 +4,11 @@ import com.example.geekslab.Entite.Claim;
 import com.example.geekslab.Entite.Useer;
 import com.example.geekslab.IService.IClaimService;
 import com.example.geekslab.Repository.ActivityRepo.ClaimRepository;
-import com.example.geekslab.Repository.UseerRepo.UseerRepository;
+import com.example.geekslab.Repository.UseerRepo.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 @Service
 @AllArgsConstructor
@@ -16,6 +16,7 @@ public class ClaimService implements IClaimService {
 
 
     ClaimRepository repo;
+    UserRepository repuser;
 
     @Override
     public List<Claim> GetallClaims() {
@@ -24,23 +25,30 @@ public class ClaimService implements IClaimService {
 
     @Override
     public Claim AddClaim(Claim claim) {
-     return repo.save(claim);
+        return repo.save(claim);
+    }
+
+    @Override
+    public Claim findClaimById(Long id) {
+        return repo.findById(id).orElse(null);
     }
 
     @Override
     public void delete(long id) {
-    repo.deleteById(id);
+        repo.deleteById(id);
     }
 
-    /*@Override
-    public Claim ajouterReclamation(Long userId, Date date, String description) {
-        Useer user = UseerRepository.findById(userId)
-                .orElseThrow(() -> new RuntimeException("Utilisateur introuvable"));
-        Claim reclamation = new Claim();
-        reclamation.setUser(user);
-        reclamation.setDate(date);
-        reclamation.setDescription(description);
-        return repo.save(reclamation);    }
-*/
 
+
+
+
+   /* public void addClaimToUser(Long userId, Claim claim) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new EntityNotFoundException("User not found"));
+
+        claim.setUser(user);
+        user.getClaims().add(claim);
+
+        userRepository.save(user);
+    }*/
 }
