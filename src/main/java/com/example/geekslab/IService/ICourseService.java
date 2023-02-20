@@ -11,6 +11,8 @@ public interface ICourseService {
     Course createCourse(Course course);
     Course updateCourse(Long id, Course courseDetails);
     void deleteCourse(Long id);
+    public Course findCourseByName(String name);
+
 
     List<Lesson> findAllLessons();
     Lesson findLessonById(Long id);

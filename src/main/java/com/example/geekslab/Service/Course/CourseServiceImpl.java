@@ -3,6 +3,7 @@ package com.example.geekslab.Service.Course;
 import com.example.geekslab.Entites.*;
 import com.example.geekslab.IService.ICourseService;
 import com.example.geekslab.Repository.CourseRepo.*;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -58,6 +59,14 @@ public class CourseServiceImpl implements ICourseService {
     public void deleteCourse(Long id) {
 
     }
+
+    @Override
+    public Course findCourseByName(String name) {
+
+        Course course = courseRepository.findByName(name);
+        return course;
+    }
+
 
     //************************************ Lesson ************************************ //
     @Override
@@ -214,3 +223,5 @@ public class CourseServiceImpl implements ICourseService {
         return questionRepository.save(question);
     }
 }
+
+

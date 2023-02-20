@@ -26,6 +26,11 @@ public class CourseController {
         return courseService.findCourseById(id);
     }
 
+    @GetMapping("/searchCourse/{nom}")
+    public Course findCourse(@PathVariable String nom) {
+        return courseService.findCourseByName(nom);
+    }
+
     @PostMapping
     public Course create(@RequestBody Course course) {
         return courseService.createCourse(course);
@@ -40,4 +45,6 @@ public class CourseController {
     public void delete(@PathVariable Long id) {
         courseService.deleteCourse(id);
     }
+
+
 }
