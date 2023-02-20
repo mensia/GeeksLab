@@ -1,7 +1,7 @@
 package com.example.geekslab.Controller.CourseController;
 
 import com.example.geekslab.Entites.*;
-import com.example.geekslab.IService.ICourseService;
+import com.example.geekslab.IService.ICoursesService.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,40 +9,38 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/answers")
 public class AnswerController {
-    private final ICourseService courseService;
+    private final IAnswerService answerService;
+    private final IQuestionService questionService;
 
-    public AnswerController(ICourseService answerService) {
-        this.courseService = answerService;
+    public AnswerController(IAnswerService answerService, IQuestionService questionService) {
+        this.answerService = answerService;
+        this.questionService = questionService;
     }
 
     @GetMapping
     public List<Answer> findAll() {
-        return courseService.findAllAnswers();
+        return answerService.findAllAnswers();
     }
 
     @GetMapping("/{id}")
     public Answer findById(@PathVariable Long id) {
-        return courseService.findAnswerById(id);
+        return answerService.findAnswerById(id);
     }
 
     @PostMapping
     public Answer create(@RequestBody Answer answer) {
-        return courseService.createAnswer(answer);
+        return answerService.createAnswer(answer);
     }
 
     @PutMapping("/{id}")
     public Answer update(@PathVariable Long id, @RequestBody Answer answer) {
-        return courseService.updateAnswer(id, answer);
+        return answerService.updateAnswer(id, answer);
     }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
-        courseService.deleteAnswer(id);
+        answerService.deleteAnswer(id);
     }
 
-    @PostMapping("addAnswerToQuestion/{questionId}/{answerId}")
-    public Question addQuestionToQuiz(@PathVariable Long questionId, @PathVariable Long answerId){
-        courseService.addAnswerToQuestion(questionId,answerId);
-        return courseService.findQuestionById(questionId);
-    }
+
 }

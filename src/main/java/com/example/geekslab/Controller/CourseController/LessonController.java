@@ -1,7 +1,7 @@
 package com.example.geekslab.Controller.CourseController;
 
 import com.example.geekslab.Entites.Lesson;
-import com.example.geekslab.IService.ICourseService;
+import com.example.geekslab.IService.ICoursesService.ILessonService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,34 +10,34 @@ import java.util.List;
 @RequestMapping("/api/lessons")
 public class LessonController {
 
-    private final ICourseService courseService;
+    private final ILessonService lessonService;
 
-    public LessonController(ICourseService courseService) {
-        this.courseService = courseService;
+    public LessonController(ILessonService courseService) {
+        this.lessonService = courseService;
     }
 
     @GetMapping
     public List<Lesson> findAll() {
-        return courseService.findAllLessons();
+        return lessonService.findAllLessons();
     }
 
     @GetMapping("/{id}")
     public Lesson findById(@PathVariable Long id) {
-        return courseService.findLessonById(id);
+        return lessonService.findLessonById(id);
     }
 
     @PostMapping
     public Lesson create(@RequestBody Lesson lesson) {
-        return courseService.createLesson(lesson);
+        return lessonService.createLesson(lesson);
     }
 
     @PutMapping("/{id}")
     public Lesson update(@PathVariable Long id, @RequestBody Lesson lesson) {
-        return courseService.updateLesson(id, lesson);
+        return lessonService.updateLesson(id, lesson);
     }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
-        courseService.deleteLesson(id);
+        lessonService.deleteLesson(id);
     }
 }

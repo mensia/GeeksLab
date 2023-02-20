@@ -1,7 +1,7 @@
 package com.example.geekslab.Controller.CourseController;
 
 import com.example.geekslab.Entites.Quiz;
-import com.example.geekslab.IService.ICourseService;
+import com.example.geekslab.IService.ICoursesService.IQuizService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,41 +10,41 @@ import java.util.List;
 @RequestMapping("/api/quizzes")
 public class QuizController {
 
-    private final ICourseService courseService;
+    private final IQuizService quizService;
 
-    public QuizController(ICourseService courseService) {
-        this.courseService = courseService;
+    public QuizController(IQuizService quizService) {
+        this.quizService = quizService;
     }
 
     @GetMapping
     public List<Quiz> findAll() {
-        return courseService.findAllQuizzes();
+        return quizService.findAllQuizzes();
     }
 
     @GetMapping("/{id}")
     public Quiz findById(@PathVariable Long id) {
-        return courseService.findQuizById(id);
+        return quizService.findQuizById(id);
     }
 
     @PostMapping
     public Quiz create(@RequestBody Quiz quiz) {
-        return courseService.createQuiz(quiz);
+        return quizService.createQuiz(quiz);
     }
 
     @PutMapping("/{id}")
     public Quiz update(@PathVariable Long id, @RequestBody Quiz quiz) {
-        return courseService.updateQuiz(id, quiz);
+        return quizService.updateQuiz(id, quiz);
     }
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
-        courseService.deleteQuiz(id);
+        quizService.deleteQuiz(id);
     }
 
 
     @PostMapping("addQuestionToQuiz/{quizId}/{questionId}")
     public Quiz addQuestionToQuiz( @PathVariable Long quizId, @PathVariable Long questionId){
-        courseService.addQuestionToQuiz(quizId,questionId);
-        return courseService.findQuizById(quizId);
+        quizService.addQuestionToQuiz(quizId,questionId);
+        return quizService.findQuizById(quizId);
     }
 
 }

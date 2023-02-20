@@ -1,7 +1,7 @@
 package com.example.geekslab.Controller.CourseController;
 
 import com.example.geekslab.Entites.Course;
-import com.example.geekslab.IService.ICourseService;
+import com.example.geekslab.IService.ICoursesService.ICourseService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
