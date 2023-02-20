@@ -5,10 +5,13 @@ import com.example.geekslab.Entite.Useer;
 import com.example.geekslab.IService.IClaimService;
 import com.example.geekslab.Repository.ActivityRepo.ClaimRepository;
 import com.example.geekslab.Repository.UseerRepo.UseerRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
-
+@Service
+@AllArgsConstructor
 public class ClaimService implements IClaimService {
 
 
@@ -39,7 +42,5 @@ public class ClaimService implements IClaimService {
         reclamation.setDescription(description);
         return repo.save(reclamation);    }
 */
-    public List<Claim> getReclamationsByUserId(Long userId) {
-        return repo.findByUtilisateurId(userId);
-    }
+
 }
