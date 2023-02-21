@@ -11,6 +11,6 @@ public interface IArticleService {
     List<Article> GetallArticle();
     public Article AddArticle(Article article);
     public Article findArticlebyId(Long id) ;
-
+    public Article updateArticle(Long id, Article article);
     void delete(long id);
 }

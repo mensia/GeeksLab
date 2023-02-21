@@ -1,5 +1,6 @@
 package com.example.geekslab.Service.Activity;
 
+import com.example.geekslab.Entite.Article;
 import com.example.geekslab.Entite.Claim;
 import com.example.geekslab.Entite.Useer;
 import com.example.geekslab.IService.IClaimService;
@@ -38,7 +39,13 @@ public class ClaimService implements IClaimService {
         repo.deleteById(id);
     }
 
+    public Claim updateClaim(Long id, Claim claim) {
 
+        Claim oldclaim = repo.findById(id).orElse(null);
+        oldclaim.setDescription(oldclaim.getDescription());
+        oldclaim.setStatus(oldclaim.getStatus());
+        return repo.save(oldclaim);
+    }
 
 
 

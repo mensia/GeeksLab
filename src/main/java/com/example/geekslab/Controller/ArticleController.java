@@ -4,10 +4,7 @@ import com.example.geekslab.Entite.Article;
 import com.example.geekslab.Entite.Claim;
 import com.example.geekslab.IService.IArticleService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,5 +24,12 @@ public class ArticleController {
     public Article AddArticle(@RequestBody Article article) {
        return serv.AddArticle(article);
     }
+
+    @PutMapping("/{id}")
+    public Article updateArticle(@PathVariable Long id, @RequestBody Article article) {
+        return serv.updateArticle(id, article);
+    }
+
+
 
 }

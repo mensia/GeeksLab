@@ -26,11 +26,20 @@ public class ArticleService implements IArticleService {
 
     @Override
     public void delete(long id) {
-
+        rep.deleteById(id);
     }
 
     @Override
     public Article findArticlebyId(Long id) {
         return rep.findById(id).orElse(null);
     }
+
+
+    public Article updateArticle(Long id, Article article) {
+
+        Article oldArticle = rep.findById(id).orElse(null);
+        oldArticle.setDescription(oldArticle.getDescription());
+        return rep.save(oldArticle);
+    }
+
 }
