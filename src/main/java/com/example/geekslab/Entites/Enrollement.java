@@ -15,7 +15,7 @@ import java.io.Serializable;
 public class Enrollement implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
    /* @ManyToOne
     @JoinColumn(name = "user_id")
