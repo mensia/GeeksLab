@@ -1,17 +1,22 @@
 package com.example.geekslab.Entites;
 
 import lombok.*;
-import lombok.experimental.FieldDefaults;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.io.Serializable;
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @ToString
-@FieldDefaults(level = AccessLevel.PRIVATE)
+@Entity
+
 public class Demand implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     // le chefService fait une demande pour les equipement
 }

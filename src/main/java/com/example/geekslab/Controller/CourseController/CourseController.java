@@ -1,7 +1,7 @@
 package com.example.geekslab.Controller.CourseController;
 
 import com.example.geekslab.Entites.Course;
-import com.example.geekslab.IService.ICourseService;
+import com.example.geekslab.IService.ICoursesService.ICourseService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,6 +26,11 @@ public class CourseController {
         return courseService.findCourseById(id);
     }
 
+    @GetMapping("/searchCourse/{nom}")
+    public Course findCourse(@PathVariable String nom) {
+        return courseService.findCourseByName(nom);
+    }
+
     @PostMapping
     public Course create(@RequestBody Course course) {
         return courseService.createCourse(course);
@@ -40,4 +45,6 @@ public class CourseController {
     public void delete(@PathVariable Long id) {
         courseService.deleteCourse(id);
     }
+
+
 }

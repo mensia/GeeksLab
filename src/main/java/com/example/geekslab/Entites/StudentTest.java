@@ -3,25 +3,32 @@ package com.example.geekslab.Entites;
 import lombok.*;
 
 import javax.persistence.*;
-
-import javax.persistence.Entity;
 import java.io.Serializable;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @ToString
 @Entity
-public class Enrollement implements Serializable {
+public class StudentTest implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
-   /* @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user; */
+    private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "course_id")
-    private Course course;
+    private Quiz quiz;
+
+   /* @ManyToOne
+    private Useer student;*/
+
+    @ManyToOne
+    private Question question;
+
+    @ManyToOne
+    private Answer chosenAnswer;
+
+    @ManyToOne
+    private Answer correctAnswer;
+
 }
