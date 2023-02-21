@@ -1,8 +1,8 @@
 package com.example.geekslab.Service.Useer;
 
-import com.example.geekslab.Entite.AppUser;
-import com.example.geekslab.Entite.Role;
-import com.example.geekslab.Entite.UserRole;
+import com.example.geekslab.Entites.AppUser;
+import com.example.geekslab.Entites.Role;
+import com.example.geekslab.Entites.UserRole;
 import com.example.geekslab.Repository.UseerRepo.AppUserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
