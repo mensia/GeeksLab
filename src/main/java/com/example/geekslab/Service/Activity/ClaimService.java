@@ -57,14 +57,38 @@ public class ClaimService implements IClaimService {
     }
 
 
+    @Override
+    public Question addAnswerToQuestion(Long questionId, Long answerId){
 
-   /* public void addClaimToUser(Long userId, Claim claim) {
-        User user = userRepository.findById(userId)
-                .orElseThrow(() -> new EntityNotFoundException("User not found"));
+        Answer answer = answerRepository.findById(answerId)
+                .orElse(null);
 
-        claim.setUser(user);
+        Question question = questionRepository.findById(questionId)
+                .orElse(null);
+
+        if (question.getAnswers().contains(answer)) {
+            throw new IllegalArgumentException("answer already exists in Question");
+        }
+
+        question.addAnswer(answer);
+        return questionRepository.save(question);
+    }
+    public void addClaimToUser(Long userId, Long idClaim) {
+
+        Claim claim = repo.findById(idClaim)
+                .orElseThrow(() -> new EntityNotFoundException("Claim Not Found"));
+
+        Useer user = repuser.findById(userId)
+                .orElseThrow(() -> new EntityNotFoundException("Claim Not Found"));
+
+        if (user.getClaim().contains(claim)) {
+            throw new IllegalArgumentException("  already exists  ");
+        }
+
+      user.AddClaim(claim);
+
         user.getClaims().add(claim);
 
         userRepository.save(user);
-    }*/
+    }
 }
