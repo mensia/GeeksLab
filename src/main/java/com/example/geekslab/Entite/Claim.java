@@ -28,7 +28,7 @@ public class Claim implements Serializable {
     private Date Date;
     private String Status;
 
-
+    @JsonIgnore
     @ManyToOne
     Useer user;
 

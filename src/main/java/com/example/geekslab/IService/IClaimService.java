@@ -13,7 +13,6 @@ public interface IClaimService {
     void delete(long id);
     public Claim findClaimById(Long id)  ;
     public Claim updateClaim(Long id, Claim claim);
-
-    //public Claim ajouterReclamation(Long userId, Date date, String description) ;
+    public void ajouterEtaffecterClaim(List<Claim> claim, Long idUser);
 
     }

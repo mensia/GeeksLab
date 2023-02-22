@@ -28,4 +28,13 @@ public class ClaimController {
     public Claim updateClaim(@PathVariable Long id, @RequestBody Claim claim) {
         return serv.updateClaim(id, claim);
     }
+
+
+    @PostMapping("/add-listeClaim/{idUser}")
+    @ResponseBody
+    public void ajouterEtaffecterClaim(@RequestBody  List<Claim> claim ,@PathVariable Long idUser){
+        serv.ajouterEtaffecterClaim(claim,idUser);
+
+    }
+
 }
