@@ -5,7 +5,9 @@ import com.example.geekslab.Entite.Claim;
 import com.example.geekslab.IService.IArticleService;
 import com.example.geekslab.Repository.ActivityRepo.ArticleRepo;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 @Service
@@ -34,10 +36,14 @@ public class ArticleService implements IArticleService {
         return rep.findById(id).orElse(null);
     }
 
+    @Override
 
     public Article updateArticle(Long id, Article article) {
 
         Article oldArticle = rep.findById(id).orElse(null);
+        if (oldArticle == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "article not found with id " + id);
+        }
         oldArticle.setDescription(oldArticle.getDescription());
         return rep.save(oldArticle);
     }

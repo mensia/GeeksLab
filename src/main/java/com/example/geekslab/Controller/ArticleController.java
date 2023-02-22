@@ -25,10 +25,6 @@ public class ArticleController {
        return serv.AddArticle(article);
     }
 
-    @PutMapping("/{id}")
-    public Article updateArticle(@PathVariable Long id, @RequestBody Article article) {
-        return serv.updateArticle(id, article);
-    }
 
 
 
